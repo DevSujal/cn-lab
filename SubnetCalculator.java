@@ -111,12 +111,6 @@ public class SubnetCalculator {
             System.out.println("Broadcast Address: " + join(broadcastAddress));
             networkAddress[networkAddress.length - 1] += 1;
             broadcastAddress[broadcastAddress.length - 1] -= 1;
-            for(int i = broadcastAddress.length - 2; i >= 0; i--) {
-                if(broadcastAddress[i] > 0) {
-                    break;
-                }
-                broadcastAddress[i] = 255;
-            }
             System.out.println("Host Range: " + join(networkAddress) + " - " + join(broadcastAddress));
         } catch (Exception e) {
             System.out.println("Error in calculating network details.");
